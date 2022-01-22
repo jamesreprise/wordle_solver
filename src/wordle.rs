@@ -91,6 +91,8 @@ pub fn prune_list(word_list: &Vec<String>, choice: &String, response: Response) 
 }
 
 pub fn choose(word_list: &Vec<String>) -> Option<String> {
+    // TODO: Instead of choosing randomly, choose the word that eliminates the most possibilities.
+    // This will be different per dictionary.
     match word_list.choose(&mut rand::thread_rng()) {
         Some(s) => Some(s.clone()),
         None => None,
